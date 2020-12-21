@@ -20,19 +20,21 @@ class Inventory:
   
     def search(self, searchGuitar):
         for guitar in self.guitars:
-            builder = searchGuitar.getBuilder()
-            if (builder != None) and (not builder == '') and (not builder == guitar.getBuilder()):
+            
+            if guitar.getBuilder() != str(searchGuitar.getBuilder()):
+                print(type(guitar.getBuilder()),searchGuitar.getBuilder())
                 continue
             model = searchGuitar.getModel()
-            if (model != None) and (not model == '') and (not model == guitar.getModel()):
+            if (model == None) or (model == '') or (model.lower() != guitar.getModel().lower()):                
                 continue
-            typee = searchGuitar.getType()
-            if (typee != None) and (not typee == '') and (not typee == guitar.getType()):
+            if guitar.getType() != str(searchGuitar.getType()):
+                print("line")
                 continue
-            backWood = searchGuitar.getBackWood()
-            if (backWood != None) and (not backWood == '') and (not backWood == guitar.getBackWood()):
+            if guitar.getBackWood() != str(searchGuitar.getBackWood()):
+                print("line")
                 continue
-            topWood = searchGuitar.getTopWood()
-            if (topWood != None) and (not topWood == '') and (not topWood == guitar.getTopWood()):
+            if guitar.getTopWood() != str(searchGuitar.getTopWood()):
+                print("line")
                 continue
-        return False
+            print("line")
+            return True
