@@ -17,4 +17,3 @@ if erinGuitar:
     print(f"Model {whatErinLikes.getModel()}, Price {whatErinLikes.getType()}")
 else:
     print("Sorry, Erin, we have nothing for you")
-
