@@ -5,8 +5,8 @@ class Inventory:
         self.guitars = []
         print('Object created')
 
-    def addGuitar(self, serialNumber, price,builder,model,typee,backWood,topWood):
-        newGuitar = Guitar(serialNumber, price,builder,model,typee,backWood,topWood)
+    def addGuitar(self, serialNumber, price,spec):
+        newGuitar = Guitar(serialNumber, price,spec)
         self.guitars.append(newGuitar)
     
     def getGuitar(self, serialNumber):
@@ -18,21 +18,22 @@ class Inventory:
             else:
                 print("No guitar in the system")
   
-    def search(self, searchGuitar):
+    def search(self, searchSpec):
         guitarsList = []
 
         for guitar in self.guitars:
-            
-            if guitar.getBuilder() != searchGuitar.getBuilder():
+            guitarSpec = guitar.getSpec()
+
+            if guitarSpec.getBuilder() != searchSpec.getBuilder():
                 continue
-            model = searchGuitar.getModel()
-            if (model == None) or (model == '') or (model.lower() != guitar.getModel().lower()):                
+            model = searchSpec.getModel()
+            if (model == None) or (model == '') or (model.lower() != guitarSpec.getModel().lower()):                
                 continue
-            if guitar.getType() != searchGuitar.getType():
+            if guitarSpec.getType() != searchSpec.getType():
                 continue
-            if guitar.getBackWood() != searchGuitar.getBackWood():
+            if guitarSpec.getBackWood() != searchSpec.getBackWood():
                 continue
-            if guitar.getTopWood() != searchGuitar.getTopWood():
+            if guitarSpec.getTopWood() != searchSpec.getTopWood():
                 continue
             guitarsList.append(guitar)
         

@@ -1,14 +1,10 @@
 class Guitar:
     'Common base class for all Guitars'
     
-    def __init__(self, serialNumber, price,builder,model,typee,backWood,topWood):
+    def __init__(self, serialNumber, price,spec):
         self.serialNumber = serialNumber
         self.price = price
-        self.builder = builder
-        self.model = model
-        self.type = typee
-        self.backWood = backWood
-        self.topWood = topWood
+        self.spec = spec
 
     def getSerial(self):
         return self.serialNumber
@@ -19,19 +15,7 @@ class Guitar:
     def setPrice(self, price):
         self.price = price
     
-    def getBuilder(self):
-        return self.builder
-
-    def getModel(self):
-        return self.model
-
-    def getType(self): 
-        return self.type
-
-    def getBackWood(self):
-        return self.backWood
-
-    def getTopWood(self):
-        return self.topWood
-        
+    def getSpec(self):
+        return self.spec
+    
     
