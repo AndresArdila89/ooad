@@ -19,5 +19,6 @@ erinGuitars = inventory.search(whatErinLikes)
 if not erinGuitars:
     print("Sorry, Erin, we have nothing for you")
 else:
+    print("Erin, you might like this guitars:")
     for guitar in erinGuitars:
-        print(f"Model {guitar.getModel()}, Price {guitar.getType()}")
+        print(f"Model: {guitar.getModel()}, TopWood: {guitar.getTopWood()}, BackWood: {guitar.getBackWood()} Price: {guitar.getType()}")
