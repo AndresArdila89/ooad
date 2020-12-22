@@ -19,22 +19,21 @@ class Inventory:
                 print("No guitar in the system")
   
     def search(self, searchGuitar):
+        guitarsList = []
+
         for guitar in self.guitars:
             
-            if guitar.getBuilder() != str(searchGuitar.getBuilder()):
-                print(type(guitar.getBuilder()),searchGuitar.getBuilder())
+            if guitar.getBuilder() != searchGuitar.getBuilder():
                 continue
             model = searchGuitar.getModel()
             if (model == None) or (model == '') or (model.lower() != guitar.getModel().lower()):                
                 continue
-            if guitar.getType() != str(searchGuitar.getType()):
-                print("line")
+            if guitar.getType() != searchGuitar.getType():
                 continue
-            if guitar.getBackWood() != str(searchGuitar.getBackWood()):
-                print("line")
+            if guitar.getBackWood() != searchGuitar.getBackWood():
                 continue
-            if guitar.getTopWood() != str(searchGuitar.getTopWood()):
-                print("line")
+            if guitar.getTopWood() != searchGuitar.getTopWood():
                 continue
-            print("line")
-            return True
+            guitarsList.append(guitar)
+        
+        return guitarsList
